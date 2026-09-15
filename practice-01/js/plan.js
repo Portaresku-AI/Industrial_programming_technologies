@@ -50,7 +50,7 @@ if (Number.isFinite(dailyLimit)) {
         console.log("Ошибка: дробной дневной нормы быть не должно.");
     }
 } else {
-    flag = false;
+    flag = false;Ё
     if (Number.isNaN(dailyLimit)) {
         console.log("Ошибка: недопустимое числовое значение дневной нормы.");
     } else {
