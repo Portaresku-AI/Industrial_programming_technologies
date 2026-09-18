@@ -1,7 +1,7 @@
 "use strict";
 
-const totalTasks = 15;
-const completedTasks = 0;
+const totalTasks = 12;
+const completedTasks = 5;
 
 if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
     if (Number.isInteger(totalTasks) && Number.isInteger(completedTasks)) {

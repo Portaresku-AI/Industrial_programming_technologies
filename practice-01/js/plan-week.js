@@ -1,9 +1,20 @@
-"use strict";
+/*
+0-Monday;
+1-Tuesday;
+2-Wednesday;
+3-Thursday;
+4-Friday
+5-Saturday
+6-Sunday
+*/
 
-const totalTasks = 15;
-const completedTasks = 0;
-const dailyLimit = 4;
+const totalTasks = 30;
+const dailyLimit = 3;
+
 let flag = true;
+let completedTasks = 1;
+let AllDays = 0;
+let WorkDays = 0;
 
 if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
     if (Number.isInteger(totalTasks) && Number.isInteger(completedTasks)) {
@@ -58,19 +69,56 @@ if (Number.isFinite(dailyLimit)) {
     }
 }
 
-if (flag) {
-    let day = 0;
-    let left = totalTasks - completedTasks;
-    let todo = 0;
-    console.log("Осталось задач:", left);
-    while (left > 0) {
-        todo = dailyLimit;
-        day = day + 1;
-        if (dailyLimit > left) {
-            todo = left;
+if (flag){
+    console.log("---------------------------");
+    console.log("Осталось задач: ", totalTasks-completedTasks);
+    console.log("---------------------------");
+    let CurrentDay=0;
+    let todo=0;
+    let day="";
+    while (completedTasks < totalTasks){
+        AllDays=AllDays+1;
+        if (CurrentDay === 0) {
+            day = "Понедельник";
         }
-        left = left - todo;
-        console.log(`День ${day}: выполнено ${todo}, осталось ${left}`)
+        if (CurrentDay === 1) {
+            day = "Вторник";
+        }
+        if (CurrentDay === 2) {
+            day = "Среда";
+        }
+        if (CurrentDay === 3) {
+            day = "Четверг";
+        }
+        if (CurrentDay === 4) {
+            day = "Пятница";
+        }
+        if (CurrentDay === 5) {
+            day = "Суббота";
+        }
+        if (CurrentDay === 6) {
+            day = "Воскресенье";
+        }
+        if (CurrentDay < 5){
+            WorkDays=WorkDays+1;
+            if (dailyLimit <= totalTasks-completedTasks){
+                todo=dailyLimit;
+            }else{
+                todo=totalTasks-completedTasks;
+            }
+            completedTasks=completedTasks+todo;
+            console.log(`День №${AllDays}: ${day}; выпонено ${todo}, осталось ${totalTasks-completedTasks}`);
+        }else{
+            console.log(`День №${AllDays}: ${day} - Выходной`);
+        }
+        if (CurrentDay === 6){
+            CurrentDay=0;
+        }else{
+            CurrentDay=CurrentDay+1;
+        }
     }
-    console.log("Потребуется дней:", day);
 }
+console.log("---------------------------");
+console.log(`Потребуется календарных дней: ${AllDays}`);
+console.log(`Потребуется рабочих дней: ${WorkDays}`);
+console.log("---------------------------");
