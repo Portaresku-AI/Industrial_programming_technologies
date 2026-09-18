@@ -16,7 +16,7 @@
 
 ## Ссылка на опубликованный репозиторий
 
-GitHub Pages: 
+GitHub: https://github.com/Portaresku-AI/Industrial_programming_technologies
 
 ## Автор
 

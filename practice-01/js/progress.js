@@ -1,7 +1,7 @@
 "use strict";
 
-const totalTasks = 12;
-const completedTasks = 5;
+const totalTasks = 15;
+const completedTasks = 0;
 
 if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
     if (Number.isInteger(totalTasks) && Number.isInteger(completedTasks)) {
@@ -9,7 +9,7 @@ if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
             if ((totalTasks <= 1000) && (completedTasks <= 1000)) {
                 if (completedTasks <= totalTasks) {
                     if (totalTasks === 0) {
-                        console.log("Сообщение «Задач пока нет», без расчёта процента.");
+                        console.log("Задач пока нет");
                     } else {
                         const left = totalTasks - completedTasks;
                         const progress = ((completedTasks / totalTasks) * 100).toFixed(1);
@@ -23,7 +23,7 @@ if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
                                 status = "В работе"
                             }
                         }
-                        console.log(`Всего задач: ${totalTasks}\nВыполнено: ${completedTasks}\nОстлось: ${left}\nПрогресс: ${progress}%\nСтатус: ${status}`);
+                        console.log(`Всего задач: ${totalTasks}\nВыполнено: ${completedTasks}\nОсталось: ${left}\nПрогресс: ${progress}%\nСтатус: ${status}`);
                     }
                 } else {
                     console.log("Ошибка: выполнено больше, чем существует.");

@@ -34,27 +34,29 @@ if (Number.isFinite(totalTasks) && Number.isFinite(completedTasks)) {
     }
 }
 
-if (Number.isFinite(dailyLimit)) {
-    if (Number.isInteger(dailyLimit)) {
-        if (dailyLimit > 0) {
-            if (dailyLimit > 1000) {
+if (flag) {
+    if (Number.isFinite(dailyLimit)) {
+        if (Number.isInteger(dailyLimit)) {
+            if (dailyLimit > 0) {
+                if (dailyLimit > 1000) {
+                    flag = false;
+                    console.log("Ошибка: превышена верхняя граница нормы.");
+                }
+            } else {
                 flag = false;
-                console.log("Ошибка: превышена верхняя граница нормы.");
+                console.log("Ошибка: отрицательная или нулевая дневная норма.");
             }
         } else {
             flag = false;
-            console.log("Ошибка; отрицательная или нулевая дневная норма.");
+            console.log("Ошибка: дробной дневной нормы быть не должно.");
         }
     } else {
         flag = false;
-        console.log("Ошибка: дробной дневной нормы быть не должно.");
-    }
-} else {
-    flag = false;
-    if (Number.isNaN(dailyLimit)) {
-        console.log("Ошибка: недопустимое числовое значение дневной нормы.");
-    } else {
-        console.log("Ошибка: дневная норма задана строкой.")
+        if (Number.isNaN(dailyLimit)) {
+            console.log("Ошибка: недопустимое числовое значение дневной нормы.");
+        } else {
+            console.log("Ошибка: дневная норма задана строкой.")
+        }
     }
 }
 
